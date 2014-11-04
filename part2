@@ -1,0 +1,6 @@
+def encode(str):
+    code={letter: chr(ord(letter)+13) for letter in str}
+    for i in str:
+        print code.get(i)
+    
+encode('hello')

@@ -1,0 +1,6 @@
+words=open('c:\users\shackney\desktop\words.txt')
+word_list=words.split()
+for w in words:
+    if w==w[::-1]:
+        print w
+    

@@ -1,0 +1,60 @@
+#dictionary.py
+
+import os
+
+
+def insert():
+	newWord=raw_input("A word, please.\n")
+	newDefine=raw_input("Now a definition.\n")
+	print "Word:", newWord
+	print "Definition:", newDefine
+	eval=raw_input("Is this correct?")
+	if eval in ['yes','y','Y']:
+		store(newWord,newDefine)
+		raw_input("Continue...")
+	else:
+		print "Too bad."
+		raw_input()
+
+
+def store(word,definition):
+	f=open('default.db','a') #a for append, so contents aren't overwritten
+	f.write(','.join([word, definition + '\n'])) #don't join \n as its own element, 
+												 #there will be an extra comma
+	f.close()
+	#return True
+
+
+menu=['Add', 'Find', 'Show all', 'Update', 'Delete', 'Quit']
+
+while True: #meaning forever, until we do something to end it
+	#print '\n'.join(item for item in menu) - includes no menu numbers
+	os.system('clear') #built in command from importing 'os'
+	for num, item in enumerate(menu):
+		print num+1, item
+		#without asking for input, this will run again and again forever
+		
+	response=raw_input("Choose one\n") #string is not actually passed to raw_input, just
+									   #printed then expects an input to continue code
+	if response in ['6', 'Q', 'q']: #all raw input is a string
+		break #ends loop, program ends if this is the end of the code
+	if response in ['1', 'A', 'a']:
+		insert()	
+	
+
+
+
+
+
+
+
+
+
+
+#def lookup()
+
+
+#def update()
+
+
+#def delete()

@@ -10,4 +10,8 @@ def cypher(letter, shift):
 def stripString(str):
     string=str.lower()
     inputs=list(string)
-    for 
+    junk_chars=[";", ",", ":", "'", ")", "("]
+    for index,element in enumerate(inputs):
+        for junk in junk_chars:
+            if element in junk_chars:
+                string

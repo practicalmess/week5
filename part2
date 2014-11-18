@@ -1,6 +1,13 @@
-def encode(str):
-    code={letter: chr(ord(letter)+13) for letter in str}
-    for i in str:
-        print code.get(i)
+def cypher(letter, shift):
+    if letter!=' ':
+        raw_number= ord(letter)-ord('a')+shift
+        shifted_number=raw_number%26
+        shifted_letter=chr(97+shifted_number)
+        return shifted_letter
+    else:
+        return letter
     
-encode('hello')
+def stripString(str):
+    string=str.lower()
+    inputs=list(string)
+    for 
